@@ -10,5 +10,5 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/E-commerce-website/',   // ✅ مكانه هنا خارج plugins
+  base: '/E-commerce-website/',   
 })
