@@ -1,4 +1,4 @@
-import './App.css'
+
 import Navbar from './components/Navbar/Navbar'
 import { Routes, Route } from 'react-router-dom'
 import Shop from './pages/Shop'

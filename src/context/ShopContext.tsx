@@ -10,8 +10,16 @@
 // }
 
 // export default ShopContextProvider;
-import {  createContext, useState } from "react";
+import {  createContext, useState, type ReactNode} from "react";
 import all_products from '../assets/all_product';
+export interface ShopContextType{
+    addToCart: (productId: number) => void;
+    getTotaalCartItems: () => number;
+    getTotalCartAmont: () => number;
+    RemoveFromCart: (productId: number) => void;
+    all_products: typeof all_products;
+    cartItems: Record<number, number>;
+}
    const getDefaultCart = () => {
         let cart = {};
         for (let i = 0; i < all_products.length+1; i++){
@@ -19,15 +27,15 @@ import all_products from '../assets/all_product';
         }
         return cart;
     }
-export const ShopContext = createContext();
-const ShopContextProvider = ({ children }) => {
+export const ShopContext = createContext<ShopContextType|undefined>(undefined);
+const ShopContextProvider = ({ children }:{children:ReactNode}) => {
     const [cartItems, setCartItems] = useState(getDefaultCart());
     console.log(cartItems);
-    const addToCart = (itemId) => {
+    const addToCart = (itemId:number) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
         console.log(cartItems);
     }
-    const RemoveFromCart = (itemId) => {
+    const RemoveFromCart = (itemId:number) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
     }
     const getTotalCartAmont = () => {

@@ -4,17 +4,32 @@ import star_icon from '../assets/star_icon.png'
 import star_dull_icon from '../assets/star_dull_icon.png'
 import { useContext } from 'react';
 import { ShopContext } from '../../context/ShopContext';
-export const ProductDisplay = (props) => {
+interface Product{
+    id: number,
+    name: string,
+    image: string,
+    old_price: number,
+    new_price:number
+}
+interface ProductDisplayProps {
+  product: Product;
+}
+export const ProductDisplay = (props:ProductDisplayProps) => {
     const { product } = props;
-    const { addToCart } = useContext(ShopContext);
+    // const { addToCart } = useContext(ShopContext);
+    const context = useContext(ShopContext);
+    if (!context) {
+        throw new Error("ProductDisplay must be used within ShopProvider")
+    }
+    const {addToCart} = context;
   return (
       <div className='ProductDisplay'>
           <div className="product-display-left">
               <div className="display-img-list">
-                  <img src={product.image} alt="" srcset="" />
-                  <img src={product.image} alt="" srcset="" />
-                  <img src={product.image} alt="" srcset="" />
-                  <img src={product.image}  alt="" srcset="" />
+                  <img src={product.image} alt=""  />
+                  <img src={product.image} alt=""  />
+                  <img src={product.image} alt=""  />
+                  <img src={product.image}  alt=""  />
               </div>
               <div className="display-img">
                   <img className='product-display-main-img' src={product.image} alt="" />

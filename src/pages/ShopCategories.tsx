@@ -1,11 +1,14 @@
-import React from 'react'
 import '../pages/css/ShopCategories.css'
 import { useContext } from "react";
-import { ShopContext } from "../context/ShopContext";
+import { ShopContext, type ShopContextType } from "../context/ShopContext";
 import dropdoen_icon from '../assets/dropdown_icon.png'
 import Items from '../components/items/items';
 const ShopCategories = (props) => {
-  const { all_products } = useContext(ShopContext);
+  const context = useContext<ShopContextType | undefined>(ShopContext);
+  if (!context) {
+     throw new Error('Product must be used within ShopProvider');
+  }
+  const { all_products } =context;
   return (
     <div className='ShopCategories'>
       <img  className='shopcategory-banner' src={props.banner} alt="" />

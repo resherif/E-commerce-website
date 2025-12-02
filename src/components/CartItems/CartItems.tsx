@@ -1,10 +1,14 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import './CartItems.css'
-import { ShopContext } from '../../context/ShopContext';
+import { ShopContext ,type ShopContextType} from '../../context/ShopContext';
 
 import remove_icon from '../assets/cart_cross_icon.png';
 export const CartItems = () => {
-    const {getTotalCartAmont ,all_products, cartItems, RemoveFromCart } = useContext(ShopContext);
+    const context = useContext<ShopContextType | undefined>(ShopContext);
+    if (!context) {
+        throw new Error("cart items must be used within shop provider");
+    }
+    const { getTotalCartAmont, all_products, cartItems, RemoveFromCart } = context;
   return (
       <div className='CartItems'>
           <div className="cart-item-format-main">
@@ -17,14 +21,14 @@ export const CartItems = () => {
               </div>
               <hr />
               {all_products.map((e) => {
-                  if (cartItems[e.id] > 0) {
-                      return <div>
+                  if ((cartItems[e.id] ?? 0) > 0) {
+                      return <div key={e.id}>
                   <div className="cartItems-format cart-item-format-main">
                       <img src={e.image} alt="" className='cartIconProductIcon' />
                               <p>{ e.name}</p>
                               < p style={{marginLeft:'20px'}}>${e.new_price}</p>
                               <button className='cart-iitems-quantity'>{ cartItems[e.id]}</button>
-                              <p>${e.new_price*cartItems[e.id] }</p>
+                              <p>${e.new_price * (cartItems[e.id] ?? 0) }</p>
                       <img src={remove_icon} className='cartItems-remove-icon' onClick={()=>{RemoveFromCart(e.id)}} alt="" />
                           </div>
                           <hr />

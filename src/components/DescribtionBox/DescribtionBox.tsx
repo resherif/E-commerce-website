@@ -1,4 +1,3 @@
-import React from 'react'
 import './DescribtionBox.css';
 export const DescribtionBox = () => {
   return (
