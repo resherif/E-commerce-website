@@ -23,12 +23,12 @@ export const CartItems = () => {
               {all_products.map((e) => {
                   if ((cartItems[e.id] ?? 0) > 0) {
                       return <div key={e.id}>
-                  <div className="cartItems-format cart-item-format-main">
+                  <div className="cartItems-format ">
                       <img src={e.image} alt="" className='cartIconProductIcon' />
                               <p>{ e.name}</p>
-                              < p style={{marginLeft:'20px'}}>${e.new_price}</p>
-                              <button className='cart-iitems-quantity'>{ cartItems[e.id]}</button>
-                              <p>${e.new_price * (cartItems[e.id] ?? 0) }</p>
+                              < p style={{marginLeft:'20px'}}>$ Price of item {e.new_price}</p>
+                              <button className='cart-iitems-quantity'> { cartItems[e.id]}</button>
+                              <p>$ Total Price {e.new_price * (cartItems[e.id] ?? 0) }</p>
                       <img src={remove_icon} className='cartItems-remove-icon' onClick={()=>{RemoveFromCart(e.id)}} alt="" />
                           </div>
                           <hr />

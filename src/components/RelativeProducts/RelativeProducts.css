@@ -1,4 +1,4 @@
- .RelativeProducts {
+ /* .RelativeProducts {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,5 +55,237 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+  }
+} */
+.RelativeProducts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 140px !important;
+  padding: 20px 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.RelativeProducts h3 {
+  color: #171717;
+  font-size: 50px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.RelativeProducts hr {
+  width: 200px;
+  height: 6px;
+  background-color: #252525;
+  border-radius: 10px;
+  border: none;
+}
+
+.related-products-item {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  justify-items: center;
+}
+
+.related-products-item p {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  padding: 40px 20px;
+}
+
+/* Large Desktop - 1400px and above */
+@media (min-width: 1400px) {
+  .related-products-item {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop - 1200px to 1400px */
+@media (max-width: 1400px) {
+  .RelativeProducts {
+    padding: 20px 60px;
+  }
+
+  .related-products-item {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+}
+
+/* Tablet Landscape - 992px to 1200px */
+@media (max-width: 1200px) {
+  .RelativeProducts {
+    padding: 20px 40px;
+    margin-bottom: 120px !important;
+  }
+
+  .RelativeProducts h3 {
+    font-size: 42px;
+  }
+
+  .RelativeProducts hr {
+    width: 180px;
+    height: 5px;
+  }
+
+  .related-products-item {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+  }
+}
+
+/* Tablet Portrait - 768px to 992px */
+@media (max-width: 992px) {
+  .RelativeProducts {
+    padding: 20px 30px;
+    margin-bottom: 100px !important;
+  }
+
+  .RelativeProducts h3 {
+    font-size: 36px;
+  }
+
+  .RelativeProducts hr {
+    width: 160px;
+    height: 5px;
+  }
+
+  .related-products-item {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 35px;
+  }
+}
+
+/* Mobile Landscape - 600px to 768px */
+@media (max-width: 768px) {
+  .RelativeProducts {
+    padding: 20px 25px;
+    margin-bottom: 90px !important;
+  }
+
+  .RelativeProducts h3 {
+    font-size: 32px;
+  }
+
+  .RelativeProducts hr {
+    width: 140px;
+    height: 4px;
+  }
+
+  .related-products-item {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+  }
+}
+
+/* Mobile Portrait - 480px to 600px */
+@media (max-width: 600px) {
+  .RelativeProducts {
+    padding: 15px 20px;
+    margin-bottom: 80px !important;
+  }
+
+  .RelativeProducts h3 {
+    font-size: 28px;
+  }
+
+  .RelativeProducts hr {
+    width: 120px;
+    height: 4px;
+  }
+
+  .related-products-item {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  .related-products-item p {
+    font-size: 16px;
+    padding: 30px 15px;
+  }
+}
+
+/* Small Mobile - 400px to 480px */
+@media (max-width: 480px) {
+  .RelativeProducts {
+    padding: 15px 15px;
+    margin-bottom: 70px !important;
+  }
+
+  .RelativeProducts h3 {
+    font-size: 24px;
+  }
+
+  .RelativeProducts hr {
+    width: 100px;
+    height: 3px;
+  }
+
+  .related-products-item {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .related-products-item p {
+    font-size: 14px;
+    padding: 25px 10px;
+  }
+}
+
+/* Extra Small Mobile - 360px and below */
+@media (max-width: 400px) {
+  .RelativeProducts {
+    padding: 15px 10px;
+    margin-bottom: 60px !important;
+  }
+
+  .RelativeProducts h3 {
+    font-size: 22px;
+  }
+
+  .RelativeProducts hr {
+    width: 90px;
+    height: 3px;
+  }
+
+  .related-products-item {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .related-products-item p {
+    font-size: 14px;
+    padding: 20px 10px;
+  }
+}
+
+/* Very Small Mobile - 320px and below */
+@media (max-width: 360px) {
+  .RelativeProducts h3 {
+    font-size: 20px;
+  }
+
+  .RelativeProducts hr {
+    width: 80px;
+  }
+
+  .related-products-item {
+    gap: 12px;
   }
 }
