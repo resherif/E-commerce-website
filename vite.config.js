@@ -6,6 +6,8 @@ export default defineConfig({
   base: '/E-commerce-website/',
   build: {
     outDir: 'dist',
+    emptyOutDir: true,
    
-  }
+  },
+    publicDir: 'public', 
 })
