@@ -6,7 +6,6 @@ export default defineConfig({
   base: '/E-commerce-website/',
   build: {
     outDir: 'dist',
-    sourcemap: false,
-    minify: 'esbuild',
+   
   }
 })
