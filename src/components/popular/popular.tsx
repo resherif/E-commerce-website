@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './popular.css'
 import data_product from '../assets/data'
 import Items from '../items/items'

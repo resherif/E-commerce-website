@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './NewsLetters.css';
 
 const NewsLetters = () => {

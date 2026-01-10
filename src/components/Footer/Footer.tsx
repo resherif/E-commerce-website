@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './Footer.css'
 import Footer_logo from "../assets/logo_big.png"
 import instagram_icon from '../assets/instagram_icon.png'

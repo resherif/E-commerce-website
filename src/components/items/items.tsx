@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './items.css'
 import { Link } from 'react-router-dom'
  const Items = (props) => {

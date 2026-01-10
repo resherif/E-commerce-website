@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './BreadCrums.css'
 import arrow_icon from '../assets/breadcrum_arrow.png'
 export const BreadCrums = (props) => {

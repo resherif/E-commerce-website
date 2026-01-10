@@ -1,14 +1,14 @@
 import './Navbar.css'
 import logo from '../assets/logo.png'
 import cartIcon from '../assets/cart_icon.png'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import React from 'react'
-import { ShopContext } from '../../context/ShopContext'
+import { useShopContext } from "../../context/ShopContext";
+//import { ShopContext } from '../../context/ShopContext'
 export const Navbar = () => {
     const [menu, setMenu] = useState("Shop");
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const { getTotaalCartItems } = useContext(ShopContext);
+    const { getTotaalCartItems } = useShopContext();
     const handleMenuClick = (menuItem) => {
         setMenu(menuItem);
         setMobileMenuOpen(false);

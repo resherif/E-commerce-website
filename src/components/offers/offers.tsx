@@ -17,7 +17,7 @@
 //   )
 // }
 // export default Offers
-import React from 'react'
+
 import './offers.css'
 import execlusive_image from '../assets/exclusive_image.png'
 

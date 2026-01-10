@@ -10,8 +10,17 @@
 // }
 
 // export default ShopContextProvider;
-import {  createContext, useState, type ReactNode} from "react";
+import {  useContext,createContext, useState, type ReactNode} from "react";
 import all_products from '../assets/all_product';
+export const useShopContext = () => {
+    const context = useContext(ShopContext);
+
+    if (!context) {
+        throw new Error("useShopContext must be used within a ShopContextProvider");
+    }
+
+    return context;
+};
 export interface ShopContextType{
     addToCart: (productId: number) => void;
     getTotaalCartItems: () => number;
