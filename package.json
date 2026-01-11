@@ -1,6 +1,5 @@
 {
   "name": "ecommerce",
-  "homepage": "https://resherif.github.io/E-commerce-website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,9 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -n --remove dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.1.1",
