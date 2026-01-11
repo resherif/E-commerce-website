@@ -10,11 +10,18 @@
     "module": "ESNext",
     "target": "esnext",
     "types": [],
+    "useDefineForClassFields":true,
+
     "noImplicitAny": false,
     "noEmitOnError": true,
     "moduleResolution":"bundler",
+    "noEmit": true,
+"allowImportingTsExtensions":true,
+"resolveJsonModule":true,
+
+    
     // For nodejs:
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+   "lib": ["DOM", "DOM.Iterable", "ESNext"],
     // "types": ["node"],
     // and npm install -D @types/node
 
@@ -37,15 +44,18 @@
 
     // Recommended Options
     "strict": true,
+    "forceConsistentCasingInFileNames":true,
     "jsx": "react-jsx",
+    "allowJs":false,
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "allowSyntheticDefaultImports": true
   }
   ,
-  "include": ["src"]
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
